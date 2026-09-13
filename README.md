@@ -158,7 +158,7 @@ Instead of creating a separate repository for each week, the project was increme
 
 The initial version provided the core Task Management REST API with CRUD operations and interactive Swagger documentation.
 
-<img width="1805" height="946" alt="Week 2 Task API - Swagger UI" src="https://github.com/user-attachments/assets/a6476358-8ff3-4494-ae3a-65243d1680c9" />
+<img width="1906" height="882" alt="Week 2 Task API" src="https://github.com/user-attachments/assets/069a130b-26a6-4fc2-ae24-f38405187f4b" />
 ---
 
 ## Week 3 — Docker + PostgreSQL
