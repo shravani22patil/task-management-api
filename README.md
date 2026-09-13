@@ -158,22 +158,22 @@ Instead of creating a separate repository for each week, the project was increme
 
 The initial version provided the core Task Management REST API with CRUD operations and interactive Swagger documentation.
 
-![Week 2 Task API](<img width="1805" height="946" alt="Screenshot 2 — Swagger UI" src="https://github.com/user-attachments/assets/a6476358-8ff3-4494-ae3a-65243d1680c9" />)
-
+<img width="1805" height="946" alt="Week 2 Task API - Swagger UI" src="https://github.com/user-attachments/assets/a6476358-8ff3-4494-ae3a-65243d1680c9" />
 ---
 
 ## Week 3 — Docker + PostgreSQL
 
 The API was containerized using Docker Compose with PostgreSQL as the persistent database.
 
-![Docker PostgreSQL Running](<img width="1072" height="271" alt="Screenshot 1 — Docker running" src="https://github.com/user-attachments/assets/5012c001-4c9d-4246-b7ee-501f8791440e" />)
+<img width="1072" height="271" alt="Docker PostgreSQL Running" src="https://github.com/user-attachments/assets/5012c001-4c9d-4246-b7ee-501f8791440e" />
 
 ---
 
 ## Week 4 — Supabase Authentication
 
 The API was extended with Supabase authentication, JWT bearer authentication, public
-![Supabase authentication](<img width="1860" height="952" alt="week4" src="https://github.com/user-attachments/assets/666d67be-20ba-4067-9063-64be82ea12ed" />)
+
+<img width="1860" height="952" alt="Week 4 Supabase Authentication" src="https://github.com/user-attachments/assets/666d67be-20ba-4067-9063-64be82ea12ed" />
 
 ---
 
