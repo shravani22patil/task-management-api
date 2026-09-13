@@ -1,244 +1,1058 @@
-# Task Management API 📋
+# 🔐 Task Management API
 
-A production-ready **CRUD API** for task management built with **FastAPI** and **Python**. Features full API documentation, interactive Swagger UI, and a modern web interface.
+A full-featured **Task Management REST API** built with **FastAPI**, progressively developed across the **FlyRank Backend Internship Weeks 2, 3, and 4**.
 
-**Built for:** FlyRank Backend Internship - Week 2 Assignment
-
----
-
-## 🌟 Features
-
-✅ **Complete CRUD Operations** — Create, Read, Update, Delete tasks  
-✅ **Full REST API** — Proper HTTP methods and status codes (201, 204, 404, etc.)  
-✅ **Interactive Swagger UI** — Test endpoints directly in the browser  
-✅ **Modern Web Interface** — Beautiful, responsive task management dashboard  
-✅ **Search & Filter** — Find tasks by title or filter by completion status  
-✅ **Statistics** — Real-time task completion metrics  
-✅ **Input Validation** — Pydantic models for data validation  
-✅ **Error Handling** — Comprehensive error responses  
-✅ **Well-Documented** — Detailed docstrings and OpenAPI specs  
-✅ **Demo Data** — Comes with 3 sample tasks  
+The project started as a simple CRUD-based task management API and was progressively enhanced with persistent databases, PostgreSQL, Docker containerization, Supabase authentication, JWT verification, protected routes, and interactive Swagger documentation.
 
 ---
 
-## 🚀 Quick Start
+## 📌 Project Overview
 
-### 1. Clone the Repository
-```bash
-git clone <your-repo-url>
-cd task-api
+This repository represents the **continuous development of the same Task Management API across multiple internship assignments**.
+
+Instead of creating a separate repository for each week, the project was incrementally upgraded as new backend concepts were introduced.
+
+### Project Evolution
+
+```text
+┌───────────────────────────────────────────────┐
+│                  WEEK 2                       │
+│         FastAPI Task Management API           │
+│                                               │
+│  • REST API                                   │
+│  • CRUD Operations                            │
+│  • Pydantic Validation                        │
+│  • Swagger / OpenAPI                          │
+│  • Search & Filtering                         │
+│  • Statistics                                 │
+│  • Web Interface                              │
+└──────────────────────┬────────────────────────┘
+                       │
+                       ▼
+┌───────────────────────────────────────────────┐
+│                  WEEK 3                       │
+│       Persistent Database + Docker            │
+│                                               │
+│  • PostgreSQL                                 │
+│  • Database Persistence                       │
+│  • psycopg                                    │
+│  • Docker                                     │
+│  • Docker Compose                             │
+│  • Containerized API                          │
+│  • PostgreSQL Container                       │
+└──────────────────────┬────────────────────────┘
+                       │
+                       ▼
+┌───────────────────────────────────────────────┐
+│                  WEEK 4                       │
+│       Authentication & Protected API          │
+│                                               │
+│  • Supabase Auth                              │
+│  • User Signup                                │
+│  • User Login                                 │
+│  • JWT Access Tokens                          │
+│  • JWT Verification                           │
+│  • Reusable Auth Dependency                   │
+│  • Protected Routes                            │
+│  • Logout                                     │
+│  • HTTP Bearer Security                       │
+│  • Swagger Authorization                      │
+└───────────────────────────────────────────────┘
 ```
 
-### 2. Install Dependencies
+---
+
+# ✨ Features
+
+## Core Task Management
+
+- ✅ Create tasks
+- ✅ Read tasks
+- ✅ Read individual tasks
+- ✅ Update tasks
+- ✅ Delete tasks
+- ✅ Mark tasks as completed
+- ✅ Search tasks
+- ✅ Filter tasks by completion status
+- ✅ Pagination support
+- ✅ Task statistics
+- ✅ Health check endpoint
+- ✅ Demo task data
+
+## Backend
+
+- ✅ FastAPI REST API
+- ✅ Pydantic request/response validation
+- ✅ Proper HTTP methods
+- ✅ HTTP status codes
+- ✅ Error handling
+- ✅ OpenAPI documentation
+- ✅ Swagger UI
+- ✅ ReDoc documentation
+
+## Database
+
+- ✅ PostgreSQL persistence
+- ✅ psycopg PostgreSQL driver
+- ✅ Database connection through environment variables
+- ✅ Dockerized PostgreSQL
+- ✅ Persistent Docker volume
+
+## Authentication
+
+- ✅ Supabase Authentication
+- ✅ User signup
+- ✅ User login
+- ✅ JWT access token
+- ✅ Refresh token
+- ✅ JWT verification
+- ✅ Protected endpoints
+- ✅ Reusable FastAPI authentication dependency
+- ✅ Logout
+- ✅ Invalid/tampered token handling
+- ✅ Missing token handling
+- ✅ Expired token handling
+- ✅ HTTP Bearer authentication in Swagger
+
+## DevOps / Deployment
+
+- ✅ Dockerfile
+- ✅ Docker Compose
+- ✅ Multi-stage Docker build
+- ✅ PostgreSQL container
+- ✅ API container
+- ✅ Container health checks
+- ✅ Environment-based configuration
+
+---
+
+# 🛠️ Technology Stack
+
+| Technology | Purpose |
+|---|---|
+| Python 3.11 | Programming language |
+| FastAPI | REST API framework |
+| Uvicorn | ASGI server |
+| Pydantic | Data validation |
+| PostgreSQL | Relational database |
+| psycopg | PostgreSQL database driver |
+| Supabase | Authentication |
+| JWT | Authentication tokens |
+| python-jose | JWT processing |
+| Cryptography | Cryptographic operations |
+| Docker | Containerization |
+| Docker Compose | Multi-container development |
+| Swagger UI | Interactive API documentation |
+| ReDoc | API documentation |
+| HTML5 | Frontend |
+| CSS3 | Frontend styling |
+| JavaScript | Frontend interaction |
+| Git | Version control |
+| GitHub | Source code hosting |
+
+---
+
+# 📁 Project Structure
+
+```text
+task-api/
+│
+├── main.py
+│   └── Current Week 4 FastAPI application
+│
+├── main_week2.py
+│   └── Week 2 version of the API
+│
+├── main_week3.py
+│   └── Week 3 PostgreSQL version
+│
+├── index.html
+│   └── Task management web interface
+│
+├── requirements.txt
+│   └── Python dependencies
+│
+├── Dockerfile
+│   └── Docker image configuration
+│
+├── docker-compose.yaml
+│   └── FastAPI + PostgreSQL services
+│
+├── .env.example
+│   └── Environment variable template
+│
+├── .gitignore
+│   └── Files excluded from Git
+│
+└── README.md
+    └── Project documentation
+```
+
+> The real `.env` file is intentionally excluded from version control because it contains private credentials.
+
+---
+
+# 🚀 Getting Started
+
+## Prerequisites
+
+Before running the project, install:
+
+- Python 3.11+
+- Git
+- Docker Desktop
+- A Supabase account/project
+
+---
+
+# 🔑 Environment Configuration
+
+The project uses environment variables for configuration.
+
+Create a `.env` file in the project root.
+
+You can use `.env.example` as a template.
+
+```env
+SUPABASE_URL=your_supabase_project_url
+SUPABASE_KEY=your_supabase_anon_key
+PORT=8000
+DATABASE_URL=your_database_url
+```
+
+### Environment Variables
+
+| Variable | Description |
+|---|---|
+| `SUPABASE_URL` | Supabase project URL |
+| `SUPABASE_KEY` | Supabase anon/public API key |
+| `PORT` | Port used by the FastAPI server |
+| `DATABASE_URL` | PostgreSQL database connection string |
+
+### Security Note
+
+Never commit the actual `.env` file to GitHub.
+
+The repository contains:
+
+```text
+.env.example
+```
+
+instead of the real credentials.
+
+The `.gitignore` file contains:
+
+```text
+.env
+```
+
+to prevent accidental commits.
+
+---
+
+# ☁️ Supabase Setup
+
+Create a Supabase project and obtain the project API information from the Supabase dashboard.
+
+The application requires:
+
+```text
+SUPABASE_URL
+SUPABASE_KEY
+```
+
+Use the **anon/public key** required by the application.
+
+Do not commit private Supabase credentials to the repository.
+
+For local development, Supabase authentication is used for:
+
+- Creating users
+- Authenticating users
+- Generating access tokens
+- Verifying authenticated users
+- Ending authenticated sessions
+
+---
+
+# ▶️ Running the Project
+
+There are two supported ways to run the project.
+
+---
+
+# 🐍 Option 1 — Run with Python
+
+## 1. Clone the repository
+
+```bash
+git clone https://github.com/shravani22patil/task-management-api.git
+```
+
+Move into the project:
+
+```bash
+cd task-management-api
+```
+
+---
+
+## 2. Install dependencies
+
 ```bash
 pip install -r requirements.txt
 ```
 
-### 3. Run the Server
+---
+
+## 3. Configure environment variables
+
+Create:
+
+```text
+.env
+```
+
+using:
+
+```text
+.env.example
+```
+
+as the reference.
+
+---
+
+## 4. Start the API
+
 ```bash
 python main.py
 ```
 
-You'll see:
-```
-🚀 Starting Task API Server...
-📖 Swagger UI: http://localhost:8000/docs
-🔗 ReDoc: http://localhost:8000/redoc
-🏠 API Root: http://localhost:8000/
-INFO:     Uvicorn running on http://0.0.0.0:8000
-```
+The server starts on:
 
-### 4. Access the Application
-
-- **Web Interface:** Open `index.html` in your browser
-- **Swagger UI (Interactive Docs):** http://localhost:8000/docs
-- **ReDoc (Beautiful Docs):** http://localhost:8000/redoc
-- **API Root:** http://localhost:8000/
-
----
-
-## 📖 API Endpoints
-
-### Base URL
-```
+```text
 http://localhost:8000
 ```
 
-### Endpoints Reference
+---
 
-#### **1. List All Tasks** ✅
-```http
-GET /tasks
-```
-**Optional Query Parameters:**
-- `done` (boolean): Filter by completion status
-- `search` (string): Search task titles
-- `limit` (int): Number of results (default: 100)
-- `offset` (int): Number to skip (pagination)
+# 🐳 Option 2 — Run with Docker Compose
 
-**Examples:**
+Docker Compose is the recommended way to run the current PostgreSQL-backed version.
+
+Make sure **Docker Desktop is running**.
+
+Run:
+
 ```bash
-# Get all tasks
-curl http://localhost:8000/tasks
-
-# Get only completed tasks
-curl "http://localhost:8000/tasks?done=true"
-
-# Search for "milk" in tasks
-curl "http://localhost:8000/tasks?search=milk"
-
-# Pagination: get tasks 20-30
-curl "http://localhost:8000/tasks?limit=10&offset=20"
+docker compose up --build
 ```
 
-**Response (200 OK):**
-```json
-[
-  {
-    "id": 1,
-    "title": "Learn FastAPI",
-    "description": "Complete the tutorial",
-    "done": false,
-    "created_at": "2026-06-15T09:00:00",
-    "updated_at": "2026-06-15T09:00:00"
-  }
-]
+This starts:
+
+```text
+FastAPI API
+     │
+     ▼
+PostgreSQL Database
+```
+
+The API is available at:
+
+```text
+http://localhost:8000
+```
+
+Swagger UI:
+
+```text
+http://localhost:8000/docs
+```
+
+ReDoc:
+
+```text
+http://localhost:8000/redoc
+```
+
+Stop the containers:
+
+```bash
+docker compose down
 ```
 
 ---
 
-#### **2. Get Single Task** ✅
+# 🐳 Docker Architecture
+
+The project uses Docker Compose to run the backend API and PostgreSQL database as separate services.
+
+```text
+                   Docker Compose
+                         │
+          ┌──────────────┴──────────────┐
+          │                             │
+          ▼                             ▼
+┌───────────────────┐        ┌───────────────────┐
+│    FastAPI API    │        │    PostgreSQL     │
+│                   │        │                   │
+│    Port: 8000     │───────▶│    Port: 5432     │
+│                   │        │                   │
+└───────────────────┘        └───────────────────┘
+```
+
+The PostgreSQL database uses a persistent Docker volume so that database data can survive container restarts.
+
+---
+
+# 📖 API Documentation
+
+FastAPI automatically generates OpenAPI documentation.
+
+## Swagger UI
+
+Open:
+
+```text
+http://localhost:8000/docs
+```
+
+Swagger allows the API to be tested directly from the browser.
+
+## ReDoc
+
+Open:
+
+```text
+http://localhost:8000/redoc
+```
+
+---
+
+# 📚 API Reference
+
+## Authentication & Access
+
+| Method | Endpoint | Authentication | Description |
+|---|---|---|---|
+| POST | `/auth/signup` | ❌ Public | Create a new user |
+| POST | `/auth/login` | ❌ Public | Authenticate user |
+| POST | `/auth/logout` | 🔒 Bearer JWT | Logout authenticated user |
+| GET | `/public/info` | ❌ Public | Public information |
+| GET | `/protected/profile` | 🔒 Bearer JWT | Get authenticated user profile |
+| GET | `/protected/tasks` | 🔒 Bearer JWT | Get protected tasks |
+| POST | `/protected/tasks` | 🔒 Bearer JWT | Create protected task |
+| PUT | `/protected/tasks/{task_id}` | 🔒 Bearer JWT | Update protected task |
+| DELETE | `/protected/tasks/{task_id}` | 🔒 Bearer JWT | Delete protected task |
+
+---
+
+## Task Management
+
+| Method | Endpoint | Description |
+|---|---|---|
+| GET | `/tasks` | List tasks |
+| GET | `/tasks/{task_id}` | Get a specific task |
+| POST | `/tasks` | Create a task |
+| PUT | `/tasks/{task_id}` | Update a task |
+| DELETE | `/tasks/{task_id}` | Delete a task |
+| GET | `/stats` | Get task statistics |
+| GET | `/health` | Health check |
+| POST | `/reset` | Reset demo data |
+
+---
+
+# 🔐 Authentication Flow
+
+The Week 4 implementation adds authentication on top of the existing task API.
+
+The authentication flow is:
+
+```text
+              User
+                │
+                ▼
+        POST /auth/signup
+                │
+                ▼
+          Supabase Auth
+                │
+                ▼
+             Account
+                │
+                ▼
+        POST /auth/login
+                │
+                ▼
+       Access + Refresh Token
+                │
+                ▼
+     Authorization: Bearer <JWT>
+                │
+                ▼
+       FastAPI Protected Route
+                │
+                ▼
+       Verify JWT with Supabase
+                │
+         ┌──────┴──────┐
+         │             │
+       Valid         Invalid
+         │             │
+         ▼             ▼
+       200 OK         401
+```
+
+---
+
+# 👤 1. User Signup
+
+Endpoint:
+
 ```http
-GET /tasks/{task_id}
+POST /auth/signup
 ```
 
-**Examples:**
-```bash
-curl http://localhost:8000/tasks/1
-```
+Request:
 
-**Response (200 OK):**
 ```json
 {
-  "id": 1,
-  "title": "Learn FastAPI",
-  "description": "Complete the tutorial",
-  "done": false,
-  "created_at": "2026-06-15T09:00:00",
-  "updated_at": "2026-06-15T09:00:00"
+  "email": "user@example.com",
+  "password": "password123"
 }
 ```
 
-**Response (404 Not Found):**
+A successful signup returns:
+
+```text
+201 Created
+```
+
+The user is created through Supabase Authentication.
+
+---
+
+# 🔑 2. User Login
+
+Endpoint:
+
+```http
+POST /auth/login
+```
+
+Request:
+
 ```json
 {
-  "detail": {
-    "error": "Task 999 not found",
-    "status_code": 404
-  }
+  "email": "user@example.com",
+  "password": "password123"
+}
+```
+
+Successful authentication returns:
+
+```text
+200 OK
+```
+
+The response contains authentication tokens, including:
+
+- Access token
+- Refresh token
+
+The access token is used to access protected endpoints.
+
+---
+
+# 🛡️ 3. Protected Routes
+
+Protected routes require an HTTP Authorization header.
+
+Format:
+
+```http
+Authorization: Bearer <access_token>
+```
+
+For example:
+
+```http
+GET /protected/profile
+Authorization: Bearer eyJ...
+```
+
+The API extracts the bearer token and verifies it with Supabase.
+
+---
+
+# 👤 4. Protected Profile
+
+Endpoint:
+
+```http
+GET /protected/profile
+```
+
+Authentication:
+
+```text
+Required
+```
+
+A valid JWT allows the authenticated user's safe profile information to be returned.
+
+The endpoint rejects:
+
+- Missing token
+- Malformed authorization
+- Invalid token
+- Expired token
+- Tampered token
+
+---
+
+# 📋 5. Protected Tasks
+
+Endpoint:
+
+```http
+GET /protected/tasks
+```
+
+Authentication:
+
+```text
+Required
+```
+
+The endpoint uses the same reusable authentication dependency as the protected profile route.
+
+Additional protected task operations include:
+
+```http
+POST /protected/tasks
+PUT /protected/tasks/{task_id}
+DELETE /protected/tasks/{task_id}
+```
+
+---
+
+# 🚪 6. Logout
+
+Endpoint:
+
+```http
+POST /auth/logout
+```
+
+Authentication:
+
+```text
+Required
+```
+
+The authenticated session is ended through Supabase.
+
+Successful logout returns:
+
+```text
+204 No Content
+```
+
+---
+
+# 🌐 Public Information
+
+Endpoint:
+
+```http
+GET /public/info
+```
+
+This endpoint does not require authentication.
+
+It can be accessed without an Authorization header.
+
+---
+
+# 🚨 Authentication Error Handling
+
+The API handles authentication failures using appropriate HTTP status codes.
+
+## Missing access token
+
+```text
+401 Unauthorized
+```
+
+Example:
+
+```json
+{
+  "error": "Access token required"
 }
 ```
 
 ---
 
-#### **3. Create Task** ✅
+## Invalid or expired token
+
+```text
+401 Unauthorized
+```
+
+Example:
+
+```json
+{
+  "error": "Invalid or expired token"
+}
+```
+
+---
+
+## Invalid login credentials
+
+```text
+401 Unauthorized
+```
+
+Example:
+
+```json
+{
+  "error": "Invalid login credentials"
+}
+```
+
+---
+
+## Missing signup/login information
+
+```text
+400 Bad Request
+```
+
+---
+
+# 🔒 JWT Verification
+
+The API does not simply trust a token supplied by the client.
+
+The bearer token is extracted from the Authorization header and verified through Supabase.
+
+```text
+Client
+  │
+  │ Authorization: Bearer <token>
+  ▼
+FastAPI
+  │
+  │ Extract token
+  ▼
+Authentication Dependency
+  │
+  │ Verify token
+  ▼
+Supabase Auth
+  │
+  ├── Valid ────────▶ Authenticated User
+  │
+  └── Invalid ──────▶ 401 Unauthorized
+```
+
+This protects private API resources from unauthorized access.
+
+---
+
+# ♻️ Reusable Authentication Dependency
+
+Authentication logic is implemented as a reusable FastAPI dependency.
+
+Instead of duplicating JWT verification code inside every protected endpoint, protected routes use the same authentication mechanism.
+
+Conceptually:
+
+```text
+Reusable Auth Dependency
+          │
+     ┌────┼─────────┐
+     │    │         │
+     ▼    ▼         ▼
+ Profile Tasks    Logout
+```
+
+This improves:
+
+- Code reuse
+- Maintainability
+- Consistency
+- Security
+- Scalability
+
+---
+
+# 🧪 API Testing
+
+The authentication implementation can be tested using either:
+
+- Swagger UI
+- cURL
+- PowerShell
+- REST clients
+
+---
+
+## Test 1 — Signup
+
+```http
+POST /auth/signup
+```
+
+Example request:
+
+```json
+{
+  "email": "test@example.com",
+  "password": "password123"
+}
+```
+
+Expected:
+
+```text
+201 Created
+```
+
+---
+
+## Test 2 — Login
+
+```http
+POST /auth/login
+```
+
+Example:
+
+```json
+{
+  "email": "test@example.com",
+  "password": "password123"
+}
+```
+
+Expected:
+
+```text
+200 OK
+```
+
+Save the returned:
+
+```text
+access_token
+```
+
+---
+
+## Test 3 — Protected route without token
+
+```http
+GET /protected/profile
+```
+
+Expected:
+
+```text
+401 Unauthorized
+```
+
+---
+
+## Test 4 — Protected route with valid token
+
+```http
+GET /protected/profile
+Authorization: Bearer <access_token>
+```
+
+Expected:
+
+```text
+200 OK
+```
+
+---
+
+## Test 5 — Tampered token
+
+Change one character in the JWT and send it again.
+
+Expected:
+
+```text
+401 Unauthorized
+```
+
+This verifies that the server is actually validating the token.
+
+---
+
+## Test 6 — Logout
+
+```http
+POST /auth/logout
+Authorization: Bearer <access_token>
+```
+
+Expected:
+
+```text
+204 No Content
+```
+
+---
+
+# 🧪 Testing with PowerShell
+
+PowerShell users can use `Invoke-RestMethod`.
+
+### Signup
+
+```powershell
+Invoke-RestMethod `
+  -Uri "http://localhost:8000/auth/signup" `
+  -Method POST `
+  -ContentType "application/json" `
+  -Body '{"email":"test@example.com","password":"password123"}'
+```
+
+### Login
+
+```powershell
+Invoke-RestMethod `
+  -Uri "http://localhost:8000/auth/login" `
+  -Method POST `
+  -ContentType "application/json" `
+  -Body '{"email":"test@example.com","password":"password123"}'
+```
+
+### Public endpoint
+
+```powershell
+Invoke-RestMethod `
+  -Uri "http://localhost:8000/public/info" `
+  -Method GET
+```
+
+### Protected endpoint
+
+Replace `<TOKEN>` with the access token returned by login.
+
+```powershell
+Invoke-RestMethod `
+  -Uri "http://localhost:8000/protected/profile" `
+  -Method GET `
+  -Headers @{Authorization="Bearer <TOKEN>"}
+```
+
+---
+
+# 📝 Task API Examples
+
+## Create a task
+
 ```http
 POST /tasks
 Content-Type: application/json
-
-{
-  "title": "Buy milk",
-  "description": "Get 2 liters of whole milk"
-}
 ```
 
-**Examples:**
-```bash
-curl -X POST http://localhost:8000/tasks \
-  -H "Content-Type: application/json" \
-  -d '{"title":"Buy milk","description":"Get 2 liters"}'
-```
-
-**Response (201 Created):**
 ```json
 {
-  "id": 4,
-  "title": "Buy milk",
-  "description": "Get 2 liters of whole milk",
-  "done": false,
-  "created_at": "2026-06-15T12:00:00",
-  "updated_at": "2026-06-15T12:00:00"
+  "title": "Complete FastAPI assignment",
+  "description": "Finish the backend internship task"
 }
 ```
 
 ---
 
-#### **4. Update Task** ✅
-```http
-PUT /tasks/{task_id}
-Content-Type: application/json
+## Get all tasks
 
+```http
+GET /tasks
+```
+
+Optional query parameters:
+
+```text
+done
+search
+limit
+offset
+```
+
+Examples:
+
+```text
+GET /tasks?done=true
+GET /tasks?search=FastAPI
+GET /tasks?limit=10&offset=0
+```
+
+---
+
+## Get one task
+
+```http
+GET /tasks/1
+```
+
+---
+
+## Update a task
+
+```http
+PUT /tasks/1
+Content-Type: application/json
+```
+
+Example:
+
+```json
 {
-  "title": "Buy milk and bread",
+  "title": "Complete backend assignment",
   "done": true
 }
 ```
 
-**Examples:**
-```bash
-# Update title and mark as done
-curl -X PUT http://localhost:8000/tasks/1 \
-  -H "Content-Type: application/json" \
-  -d '{"title":"Updated title","done":true}'
-
-# Only mark as done
-curl -X PUT http://localhost:8000/tasks/1 \
-  -H "Content-Type: application/json" \
-  -d '{"done":true}'
-```
-
-**Response (200 OK):**
-```json
-{
-  "id": 1,
-  "title": "Updated title",
-  "description": "Description unchanged",
-  "done": true,
-  "created_at": "2026-06-15T09:00:00",
-  "updated_at": "2026-06-15T12:30:00"
-}
-```
-
 ---
 
-#### **5. Delete Task** ✅
+## Delete a task
+
 ```http
-DELETE /tasks/{task_id}
+DELETE /tasks/1
 ```
 
-**Examples:**
-```bash
-curl -X DELETE http://localhost:8000/tasks/1
-```
+Successful deletion returns:
 
-**Response (204 No Content):**
-```
-(empty body)
+```text
+204 No Content
 ```
 
 ---
 
-#### **6. Get Statistics** 📊
+# 📊 Task Statistics
+
+Endpoint:
+
 ```http
 GET /stats
 ```
 
-**Examples:**
-```bash
-curl http://localhost:8000/stats
-```
+The statistics endpoint provides task completion information such as:
 
-**Response (200 OK):**
 ```json
 {
   "total": 10,
@@ -250,267 +1064,517 @@ curl http://localhost:8000/stats
 
 ---
 
-#### **7. Health Check** 🏥
+# ❤️ Health Check
+
+Endpoint:
+
 ```http
 GET /health
 ```
 
-**Response (200 OK):**
-```json
-{
-  "status": "ok",
-  "timestamp": "2026-06-15T12:00:00",
-  "tasks_in_memory": 10
-}
+The health endpoint is used to verify that the API is running correctly.
+
+It can also be used by container health checks.
+
+---
+
+# 🎨 Web Interface
+
+The project also includes a browser-based task management interface.
+
+File:
+
+```text
+index.html
+```
+
+The interface provides functionality such as:
+
+- Create tasks
+- View tasks
+- Search tasks
+- Filter completed/pending tasks
+- Mark tasks as complete
+- Delete tasks
+- View task statistics
+- Responsive interface
+- Dark-themed UI
+
+The frontend communicates with the FastAPI backend.
+
+---
+
+# 📈 Week-by-Week Development
+
+## 🟢 Week 2 — FastAPI Task Management API
+
+The project began as a RESTful task management API.
+
+### Implemented
+
+- FastAPI application
+- Uvicorn server
+- Task CRUD operations
+- Pydantic validation
+- HTTP status codes
+- Search
+- Filtering
+- Pagination
+- Statistics
+- Health check
+- Swagger UI
+- ReDoc
+- Browser-based task management interface
+
+The initial version demonstrated the fundamentals of building a REST API using FastAPI.
+
+---
+
+# 🟡 Week 3 — Database & Docker
+
+The API was then extended beyond simple in-memory task storage.
+
+### Implemented
+
+- SQLite persistence during the database development phase
+- PostgreSQL integration
+- psycopg PostgreSQL driver
+- Database connection configuration
+- Dockerfile
+- Docker Compose
+- PostgreSQL Docker container
+- Persistent PostgreSQL volume
+- Container health checks
+
+The Week 3 version introduced persistent backend storage and containerized development.
+
+---
+
+# 🔴 Week 4 — Authentication & Security
+
+The existing API was upgraded with user authentication and protected resources.
+
+### Implemented
+
+- Supabase Authentication
+- Signup
+- Login
+- Logout
+- Access tokens
+- Refresh tokens
+- JWT verification
+- HTTP Bearer authentication
+- Protected profile endpoint
+- Protected task endpoints
+- Public endpoint
+- Reusable authentication dependency
+- Invalid token handling
+- Expired token handling
+- Tampered token handling
+- Swagger authentication
+- Swagger Authorize functionality
+
+The API now supports authenticated and unauthenticated resources.
+
+---
+
+# 🔄 Current Architecture
+
+The current project combines the major backend components developed throughout the internship.
+
+```text
+                         CLIENT
+                           │
+                           ▼
+                  ┌─────────────────┐
+                  │    FastAPI      │
+                  │     Server      │
+                  └────────┬────────┘
+                           │
+              ┌────────────┼────────────┐
+              │            │            │
+              ▼            ▼            ▼
+          Task API      Auth API    Public API
+              │            │
+              │            ▼
+              │       Supabase Auth
+              │            │
+              │            ▼
+              │        JWT Token
+              │
+              ▼
+       PostgreSQL Database
 ```
 
 ---
 
-#### **8. Reset to Demo Data** 🔄
+# 🔐 Security Design
+
+The project separates public and protected resources.
+
+```text
+PUBLIC
+│
+├── POST /auth/signup
+├── POST /auth/login
+└── GET  /public/info
+
+
+PROTECTED
+│
+├── POST   /auth/logout
+├── GET    /protected/profile
+├── GET    /protected/tasks
+├── POST   /protected/tasks
+├── PUT    /protected/tasks/{id}
+└── DELETE /protected/tasks/{id}
+```
+
+Protected resources require:
+
 ```http
-POST /reset
-```
-
-**Response (200 OK):**
-```json
-{
-  "message": "Tasks reset to demo state",
-  "tasks_count": 3,
-  "timestamp": "2026-06-15T12:00:00"
-}
+Authorization: Bearer <JWT>
 ```
 
 ---
 
-## 🧪 Testing with cURL
+# 📦 Dependencies
 
-```bash
-# 1. Get all tasks
-curl http://localhost:8000/tasks
+The main Python dependencies include:
 
-# 2. Create a new task
-curl -X POST http://localhost:8000/tasks \
-  -H "Content-Type: application/json" \
-  -d '{"title":"Buy groceries","description":"Milk, bread, eggs"}'
-
-# 3. Get specific task
-curl http://localhost:8000/tasks/1
-
-# 4. Update task (mark as done)
-curl -X PUT http://localhost:8000/tasks/1 \
-  -H "Content-Type: application/json" \
-  -d '{"done":true}'
-
-# 5. Delete task
-curl -X DELETE http://localhost:8000/tasks/1
-
-# 6. Get statistics
-curl http://localhost:8000/stats
-
-# 7. Search tasks
-curl "http://localhost:8000/tasks?search=milk"
-
-# 8. Filter completed tasks
-curl "http://localhost:8000/tasks?done=true"
+```text
+FastAPI
+Uvicorn
+Pydantic
+python-multipart
+psycopg
+python-dotenv
+Supabase
+GoTrue
+HTTPX
+python-jose
+cryptography
+PyJWT
 ```
 
----
+Install them using:
 
-## 💻 Testing in Swagger UI
-
-1. Go to **http://localhost:8000/docs**
-2. Click on any endpoint
-3. Click "Try it out"
-4. Fill in parameters/body
-5. Click "Execute"
-6. See the response immediately
-
-This is **much easier** than cURL for manual testing!
-
----
-
-## 🎨 Web Interface Features
-
-- **Create Tasks** — Add new tasks with title and description
-- **Search** — Find tasks by typing in the search box
-- **Filter** — View all, pending, or completed tasks
-- **Toggle Done** — Click the checkbox to mark tasks complete
-- **Delete** — Remove tasks permanently
-- **Real-time Stats** — See total, completed, and pending counts
-- **Responsive Design** — Works on desktop and mobile
-- **Dark Mode** — Professional dark theme with smooth animations
-
----
-
-## 📁 Project Structure
-
-```
-task-api/
-├── main.py                 # FastAPI application (ALL ENDPOINTS)
-├── index.html             # Web interface (modern, interactive UI)
-├── requirements.txt       # Python dependencies
-├── README.md             # This file
-└── .gitignore           # Git ignore file
-```
-
----
-
-## 🔧 Tech Stack
-
-- **Framework:** FastAPI (modern Python web framework)
-- **Server:** Uvicorn (async HTTP server)
-- **Validation:** Pydantic (data validation)
-- **Frontend:** HTML5, CSS3, Vanilla JavaScript
-- **Database:** In-memory list (can be swapped with SQLite/PostgreSQL)
-
----
-
-## 📝 Code Quality
-
-✅ **Comprehensive Docstrings** — Every function documented  
-✅ **Type Hints** — Full type annotations  
-✅ **Error Handling** — Proper HTTP status codes and error messages  
-✅ **Input Validation** — Pydantic models validate all inputs  
-✅ **RESTful Design** — Proper HTTP methods and semantics  
-✅ **Comments** — Code organized into sections with clear intent
-
----
-
-## 🚀 Deployment
-
-### To deploy on a server:
-
-```bash
-# Install on server
-pip install -r requirements.txt
-
-# Run with production settings
-uvicorn main:app --host 0.0.0.0 --port 8000 --workers 4
-```
-
-Or with a process manager (Gunicorn):
-
-```bash
-pip install gunicorn
-gunicorn -w 4 -k uvicorn.workers.UvicornWorker main:app
-```
-
----
-
-## 📊 Example API Flow
-
-```
-1. User opens index.html
-   ↓
-2. JavaScript fetches GET /tasks
-   ↓
-3. API returns all tasks
-   ↓
-4. UI renders tasks in cards
-   ↓
-5. User clicks "Create Task"
-   ↓
-6. JavaScript POSTs to /tasks
-   ↓
-7. API creates task, returns 201 with new task
-   ↓
-8. UI refreshes, new task appears
-```
-
----
-
-## 🎓 Learning Objectives (Week 2 Assignment)
-
-This project demonstrates:
-
-✅ **HTTP Methods** — GET, POST, PUT, DELETE  
-✅ **Status Codes** — 200, 201, 204, 400, 404  
-✅ **REST Principles** — Proper endpoint design  
-✅ **CRUD Operations** — Complete data lifecycle  
-✅ **API Documentation** — Swagger/OpenAPI  
-✅ **Data Validation** — Input checking  
-✅ **Error Handling** — User-friendly error messages  
-✅ **Frontend Integration** — Client-side API calls  
-✅ **Modern Web Development** — HTML/CSS/JS best practices
-
----
-
-## ✅ Checklist for FlyRank Submission
-
-- [ ] Clone repo
-- [ ] Install dependencies: `pip install -r requirements.txt`
-- [ ] Run server: `python main.py`
-- [ ] Test in Swagger UI: http://localhost:8000/docs
-- [ ] Test web interface: Open `index.html`
-- [ ] All CRUD operations work
-- [ ] Status codes are correct
-- [ ] Documentation is complete
-- [ ] Code is well-commented
-- [ ] Repo has ≥6 commits
-- [ ] README explains everything
-- [ ] Submit GitHub link to FlyRank
-
----
-
-## 🐛 Troubleshooting
-
-**Port 8000 already in use:**
-```bash
-# Change port
-uvicorn main:app --port 8001
-```
-
-**CORS issues with web interface:**
-The API is designed to run on localhost:8000 — open `index.html` locally in browser.
-
-**Module not found errors:**
 ```bash
 pip install -r requirements.txt
 ```
 
-**Can't connect to API:**
-- Ensure server is running: `python main.py`
-- Check firewall isn't blocking port 8000
-- Use `http://` not `https://`
+---
+
+# 🧰 Development Workflow
+
+The project was developed incrementally using Git and GitHub.
+
+The general workflow was:
+
+```text
+Develop
+   ↓
+Test locally
+   ↓
+Fix errors
+   ↓
+Run API
+   ↓
+Verify Swagger
+   ↓
+Commit changes
+   ↓
+Push to GitHub
+```
+
+Git was used to track the progression of the backend throughout the internship assignments.
 
 ---
 
-## 📚 Resources
+# 📜 Git Development History
 
-- **FastAPI Docs:** https://fastapi.tiangolo.com/
-- **Pydantic Docs:** https://docs.pydantic.dev/
-- **HTTP Status Codes:** https://httpwg.org/specs/rfc9110.html#status.codes
-- **REST Best Practices:** https://restfulapi.net/
+The repository contains commits corresponding to the progressive development of the project.
+
+Current development progression includes:
+
+```text
+Complete Task Management API with web UI
+        ↓
+Upgrade Task API with SQLite persistence
+        ↓
+Complete Week 3 Docker PostgreSQL Task API
+        ↓
+Prepare Week 4 authentication release
+        ↓
+Week 4 documentation and finalization
+```
+
+The repository therefore demonstrates the evolution of the same application rather than separate unrelated projects.
 
 ---
 
-## 👤 Author
+# 🧹 Repository Hygiene
 
-**Shravani Rajendra Patil**
-- GitHub: https://github.com/shravani22patil
-- LinkedIn: https://linkedin.com/in/shravani-patil-38791b286
-- Email: shravanipatil580@gmail.com
+The repository intentionally excludes sensitive and unnecessary local-development files.
+
+Ignored files include:
+
+```text
+.env
+*.db
+__pycache__/
+*.pyc
+.venv/
+venv/
+env/
+```
+
+The repository contains:
+
+```text
+.env.example
+```
+
+so that another developer can understand which environment variables are required without exposing actual credentials.
+
+---
+
+# 🚨 Important Security Notes
+
+Never commit:
+
+```text
+.env
+```
+
+Never expose:
+
+```text
+SUPABASE_KEY
+DATABASE_URL
+```
+
+when they contain real credentials.
+
+Use:
+
+```text
+.env.example
+```
+
+for public documentation and setup instructions.
+
+---
+
+# 🐛 Troubleshooting
+
+## Port 8000 already in use
+
+Check which application is using the port and stop it, or run the API on another port.
+
+Example:
+
+```bash
+uvicorn main:app --host 0.0.0.0 --port 8001
+```
+
+---
+
+## Docker containers are not running
+
+Make sure Docker Desktop is running.
+
+Then:
+
+```bash
+docker compose up --build
+```
+
+---
+
+## Check running containers
+
+```bash
+docker compose ps
+```
+
+---
+
+## View API logs
+
+```bash
+docker compose logs api
+```
+
+---
+
+## View PostgreSQL logs
+
+```bash
+docker compose logs postgres
+```
+
+---
+
+## Stop containers
+
+```bash
+docker compose down
+```
+
+---
+
+## Rebuild containers
+
+```bash
+docker compose up --build
+```
+
+---
+
+# 📖 Useful Endpoints
+
+Once the API is running:
+
+| Resource | URL |
+|---|---|
+| API | http://localhost:8000 |
+| Swagger | http://localhost:8000/docs |
+| ReDoc | http://localhost:8000/redoc |
+| Health | http://localhost:8000/health |
+| Public Info | http://localhost:8000/public/info |
+
+---
+
+# 🎯 Learning Outcomes
+
+This project demonstrates practical experience with:
+
+### Backend Development
+
+- REST API design
+- FastAPI
+- Request validation
+- Response models
+- HTTP methods
+- HTTP status codes
+- Error handling
+
+### Databases
+
+- Relational databases
+- PostgreSQL
+- Database persistence
+- Database connections
+
+### Authentication
+
+- User authentication
+- JWT
+- Bearer authentication
+- Token validation
+- Protected endpoints
+- Authentication dependencies
+
+### DevOps
+
+- Docker
+- Docker Compose
+- Multi-stage builds
+- Container health checks
+- Environment variables
+
+### API Documentation
+
+- OpenAPI
+- Swagger UI
+- ReDoc
+- Interactive endpoint testing
+
+### Version Control
+
+- Git
+- GitHub
+- Incremental development
+- Meaningful commits
+
+---
+
+# 🚀 Future Improvements
+
+Possible future improvements include:
+
+- Automated unit and integration tests
+- Role-based access control
+- Refresh-token endpoint
+- Rate limiting
+- Task ownership at the database level
+- Task categories
+- Task priorities
+- Due dates
+- Notifications
+- Background tasks
+- Production cloud deployment
+- CI/CD pipeline
+- Automated database migrations
+- Improved frontend authentication
+- Better monitoring and logging
+
+---
+
+# 👩‍💻 Author
+
+## Shravani Rajendra Patil
+
+Computer Engineering Student
+
+GitHub:
+
+https://github.com/shravani22patil
+
+LinkedIn:
+
+https://linkedin.com/in/shravani-patil-38791b286
+
+---
+
+# 📌 Repository
+
+GitHub Repository:
+
+https://github.com/shravani22patil/task-management-api
+
+This repository contains the cumulative development of the Task Management API across the FlyRank Backend Internship assignments.
+
+---
+
+# 🏆 Internship Progression
+
+```text
+╔══════════════════════════════════════════════════╗
+║              TASK MANAGEMENT API                 ║
+╠══════════════════════════════════════════════════╣
+║                                                  ║
+║  WEEK 2                                          ║
+║  FastAPI + REST + CRUD + Swagger + Web UI        ║
+║                     ↓                            ║
+║  WEEK 3                                          ║
+║  PostgreSQL + Persistence + Docker               ║
+║                     ↓                            ║
+║  WEEK 4                                          ║
+║  Supabase Auth + JWT + Protected Routes          ║
+║                                                  ║
+╚══════════════════════════════════════════════════╝
+```
+
+The result is a progressively developed backend application demonstrating the transition from a basic REST API to a database-backed, containerized and authenticated backend service.
 
 ---
 
 ## 📄 License
 
-Built as an assignment for FlyRank Backend Internship Week 2.
+This project was developed as part of the **FlyRank Backend Internship**.
 
 ---
 
-## 🎯 Next Steps
-
-To make this production-ready:
-
-1. Add SQLite/PostgreSQL database
-2. Add user authentication (JWT tokens)
-3. Add task categories/priorities
-4. Add due dates and reminders
-5. Add unit tests
-6. Add rate limiting
-7. Deploy to cloud (Heroku, Railway, AWS)
-
----
-
-**Happy coding! 🚀**
+**Built with Python, FastAPI, PostgreSQL, Supabase, Docker and GitHub. 🚀**
