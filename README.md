@@ -152,6 +152,31 @@ Instead of creating a separate repository for each week, the project was increme
 
 ---
 
+# 📸 Screenshots & Evidence
+
+## Week 2 — FastAPI Task Management API
+
+The initial version provided the core Task Management REST API with CRUD operations and interactive Swagger documentation.
+
+![Week 2 Task API](<img width="1805" height="946" alt="Screenshot 2 — Swagger UI" src="https://github.com/user-attachments/assets/5cf160b3-ef69-46de-b386-64502f44b79a" />
+)
+
+---
+
+## Week 3 — Docker + PostgreSQL
+
+The API was containerized using Docker Compose with PostgreSQL as the persistent database.
+
+![Docker PostgreSQL Running](screenshots/week3-docker.png)
+
+---
+
+## Week 4 — Supabase Authentication
+
+The API was extended with Supabase authentication, JWT bearer authentication, public
+
+---
+
 # 📁 Project Structure
 
 ```text
